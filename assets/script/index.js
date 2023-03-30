@@ -68,13 +68,13 @@ window.onload = function () {
       first.showModal();
     }, 1000);
   } else {
-    printCookie();
+    getCookies();
   }
 }
 onEvent('click', acceptBtn, () => {
   first.close();
-  console.log('Cookie saved successfully');
   printCookie();
+  console.log('Cookie saved successfully');
 })
 onEvent('click', settingsBtn, () => {
   first.close();
@@ -84,25 +84,44 @@ onEvent('click', saveBtn, () => {
   printCookie();
   second.close();
 })
+function getCookies() {
+  console.log(`Browser: ${getCookie('Browser')}`,
+              `\nSystem: ${getCookie('System')}`,
+              `\nScreen-width (px): ${getCookie('Screen-width')}`,
+              `\nScreen-height (px): ${getCookie('Screen-height')}`,
+  )
+}
 function printCookie() {
-  date.setSeconds(date.getSeconds() + 15);
-  const UTCDate = date.toUTCString();
   if (browser.checked) {
-    let browserName = browserDetect();
-    setCookie('Browser', `${browserName}`, {'max-age': 15});
-    console.log(`Browser: ${browserName}`);
+    setCookie('Browser', `${browserDetect()}`, {'max-age': 15});
+    console.log(`Browser: ${getCookie('Browser')}`);
+  } else {
+    setCookie('Browser', `Rejected`, {'max-age': 15});
   }
   if (operatingSystem.checked) {
     setCookie('System', `${systemDetect()}`, {'max-age': 15});
-    console.log(`System: ${systemDetect()}`);
+    console.log(`System: ${getCookie('System')}`);
+  } else {
+    setCookie('System', `Rejected`, {'max-age': 15});
   }
   if (screenWidth.checked) {
-    setCookie('Screen width', `${window.innerWidth}`, {'max-age': 15});
-    console.log(`Screen-width: ${window.innerWidth}px`);
+    setCookie('Screen-width', `${window.innerWidth}`, {'max-age': 15});
+    console.log(`Screen-width (px): ${getCookie('Screen-width')}`);
+  } else {
+    setCookie('Screen-width', `Rejected`, {'max-age': 15});
   }
   if (screenHeight.checked) {
-    setCookie('Screen height', `${window.innerHeight}`, {'max-age': 15});
-    console.log(`Screen-height: ${window.innerHeight}px`);
+    setCookie('Screen-height', `${window.innerHeight}`, {'max-age': 15});
+    console.log(`Screen-height (px): ${getCookie('Screen-height')}`);
+  } else {
+    setCookie('Screen-height', `Rejected`, {'max-age': 15});
+  }
+  if (!browser.checked && !operatingSystem.checked && !screenWidth.checked && !screenHeight.checked) {
+    deleteCookie('Browser');
+    deleteCookie('System');
+    deleteCookie('Screen-width');
+    deleteCookie('Screen-height');
+    console.log('Cookies rejected by user');
   }
 }
 function checkCookie() {
