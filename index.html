@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initinal-scale=1">
+    <meta name="author" content="Yuhan Zhao">
+    <meta name="discription" content="My Web Page">
+    <meta name="keywords" content="html, css, web, web development, seo">
+    <title>Dialogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/style/index.css" media="all">
+    <script src="./assets/script/index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">A cookie is a small piece of text sent to your browser 
+        by a website you visit. It helps the site remember information about your 
+        visit,which can make it easier to visit the site again and make the site 
+        more useful to you.</div>
+      <dialog class="first">
+        <div class="title">Cookies</div>
+        <p>
+          We use cookies to improve your experience on our website. By clicking 
+          "Accept", you agree to the use of cookies for marketing and analytics
+          purposes.
+        </p>
+        <button class="accept">Accept</button>
+        <button class="settings">Settings</button>
+      </dialog>
+      <dialog class="second">
+        <div class="title">Settings</div>
+        <div class="switches">
+          <ul>
+            <li>
+              <p>Browser</p>
+              <label class="switch">
+                <input type="checkbox" class="browser" checked>
+                <span class="slider"></span>
+              </label>
+            </li>
+            <li>
+              <p>Operating syestem</p>
+              <label class="switch">
+                <input type="checkbox" class="operating-syestem" checked>
+                <span class="slider"></span>
+              </label>
+            </li>
+            <li>
+              <p>Screen width</p>
+              <label class="switch">
+                <input type="checkbox" class="screen-width" checked>
+                <span class="slider"></span>
+              </label>
+            </li>
+            <li>
+              <p>Screen height</p>
+              <label class="switch">
+                <input type="checkbox" class="screen-height" checked>
+                <span class="slider"></span>
+              </label>
+            </li>
+          </ul>
+          <button class="save">Save preferences</button>
+        </div>
+      </dialog>
+    </div>
+  </body>
+</html>
