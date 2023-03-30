@@ -60,7 +60,6 @@ const screenWidth = select('.screen-width');
 const screenHeight = select('.screen-height');
 const first = select('.first');
 const second = select('.second');
-const date = new Date();
 
 window.onload = function () {
   if (!checkCookie()) {
@@ -133,7 +132,7 @@ function checkCookie() {
 }
 function browserDetect(){    
   let userAgent = navigator.userAgent;
-  let browserName;
+  let browserName = '';
   if (userAgent.match(/chrome|chromium|crios/i)){
       browserName = "chrome";
     } else if (userAgent.match(/firefox|fxios/i)){
@@ -145,13 +144,13 @@ function browserDetect(){
     } else if( userAgent.match(/edg/i)){
       browserName = "edge";
     } else {
-      browserName="Other Browser";
+      browserName = "Other Browser";
     }
   return browserName;    
 }
 function systemDetect(){    
   let userAgent = navigator.userAgent;
-  let systemName;
+  let systemName = '';
   if (userAgent.match(/Win/i)){
       systemName = "Windows";
     } else if (userAgent.match(/Mac/i)){
@@ -159,7 +158,7 @@ function systemDetect(){
     } else if (userAgent.match(/Linux/i)){
       systemName = "Linux";
     } else {
-      systemName="Other operating system";
+      systemName = "Other operating system";
     }
   return systemName;    
 }
