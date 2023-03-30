@@ -84,11 +84,10 @@ onEvent('click', saveBtn, () => {
   second.close();
 })
 function getCookies() {
-  console.log(`Browser: ${getCookie('Browser')}`,
-              `\nSystem: ${getCookie('System')}`,
-              `\nScreen-width (px): ${getCookie('Screen-width')}`,
-              `\nScreen-height (px): ${getCookie('Screen-height')}`,
-  )
+  console.log(`Browser: ${getCookie('Browser')}`);
+  console.log(`System: ${getCookie('System')}`);
+  console.log(`Screen-width (px): ${getCookie('Screen-width')}`);
+  console.log(`Screen-height (px): ${getCookie('Screen-height')}`);
 }
 function printCookie() {
   if (browser.checked) {
@@ -116,10 +115,6 @@ function printCookie() {
     setCookie('Screen-height', `Rejected`, {'max-age': 15});
   }
   if (!browser.checked && !operatingSystem.checked && !screenWidth.checked && !screenHeight.checked) {
-    deleteCookie('Browser');
-    deleteCookie('System');
-    deleteCookie('Screen-width');
-    deleteCookie('Screen-height');
     console.log('Cookies rejected by user');
   }
 }
