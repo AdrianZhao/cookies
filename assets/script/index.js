@@ -104,13 +104,13 @@ function printCookie() {
     setCookie('System', `Rejected`, {'max-age': 15});
   }
   if (screenWidth.checked) {
-    setCookie('Screen-width', `${window.innerWidth}`, {'max-age': 15});
+    setCookie('Screen-width', `${screen.width}`, {'max-age': 15});
     console.log(`Screen-width (px): ${getCookie('Screen-width')}`);
   } else {
     setCookie('Screen-width', `Rejected`, {'max-age': 15});
   }
   if (screenHeight.checked) {
-    setCookie('Screen-height', `${window.innerHeight}`, {'max-age': 15});
+    setCookie('Screen-height', `${screen.height}`, {'max-age': 15});
     console.log(`Screen-height (px): ${getCookie('Screen-height')}`);
   } else {
     setCookie('Screen-height', `Rejected`, {'max-age': 15});
