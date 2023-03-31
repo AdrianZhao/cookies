@@ -25,7 +25,18 @@ dialog {
   border-radius: 10px;
 }
 dialog::backdrop {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+}
+.first {
+  animation: show 0.25s ease-in-out;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .title {
   font-size: 30px;
